@@ -7,4 +7,6 @@
 /yarn.lock
 node_modules
 db.json
+*.tgz
+*.tsbuildinfo
 
