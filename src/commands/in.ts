@@ -27,5 +27,6 @@ export default class In extends Command {
       createDayReport(date, time);
     }
     this.log(`You've started working on ${date} at ${time}...`);
+    return 0;
   }
 }

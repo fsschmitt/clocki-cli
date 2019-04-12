@@ -26,5 +26,6 @@ export default class Out extends Command {
     } else {
       this.error("In order to clock out, you must first clock in.");
     }
+    return 0;
   }
 }

@@ -27,14 +27,16 @@ export default class Report extends Command {
       if (exists) {
         const report = await getDayReport(date);
         this.log(report);
+        return 0;
       } else {
         this.error(
           "In order to get a report of this day, you must first clock in."
         );
+        return 1;
       }
-      return;
     }
 
     getWeekReport(date, flags.verbose);
+    return 0;
   }
 }
