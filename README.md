@@ -9,39 +9,35 @@ A simple tool to track in-and-out time and taks done during the day
 [![Build Status](https://travis-ci.org/fsschmitt/clocki-cli.svg?branch=master)](https://travis-ci.org/fsschmitt/clocki-cli)
 
 <!-- toc -->
-
-- [ClocKI](#clocki)
-- [Usage](#usage)
-- [Commands](#commands)
-  <!-- tocstop -->
+* [ClocKI](#clocki)
+* [Usage](#usage)
+* [Commands](#commands)
+<!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g clocki
 $ clocki COMMAND
 running command...
 $ clocki (-v|--version|version)
-clocki/0.0.1 darwin-x64 node-v10.10.0
+clocki/0.0.2 darwin-x64 node-v10.10.0
 $ clocki --help [COMMAND]
 USAGE
   $ clocki COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`clocki help [COMMAND]`](#clocki-help-command)
-- [`clocki in`](#clocki-in)
-- [`clocki out`](#clocki-out)
-- [`clocki report`](#clocki-report)
-- [`clocki task [TASK]`](#clocki-task-task)
+* [`clocki help [COMMAND]`](#clocki-help-command)
+* [`clocki in`](#clocki-in)
+* [`clocki out`](#clocki-out)
+* [`clocki report`](#clocki-report)
+* [`clocki task [TASK]`](#clocki-task-task)
 
 ## `clocki help [COMMAND]`
 
@@ -78,7 +74,7 @@ ALIASES
   $ clocki hello
 ```
 
-_See code: [src/commands/in.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.1/src/commands/in.ts)_
+_See code: [src/commands/in.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.2/src/commands/in.ts)_
 
 ## `clocki out`
 
@@ -98,7 +94,7 @@ ALIASES
   $ clocki goodbye
 ```
 
-_See code: [src/commands/out.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.1/src/commands/out.ts)_
+_See code: [src/commands/out.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.2/src/commands/out.ts)_
 
 ## `clocki report`
 
@@ -115,7 +111,7 @@ OPTIONS
   -w, --week       Weekly report
 ```
 
-_See code: [src/commands/report.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.1/src/commands/report.ts)_
+_See code: [src/commands/report.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.2/src/commands/report.ts)_
 
 ## `clocki task [TASK]`
 
@@ -135,6 +131,5 @@ ALIASES
   $ clocki work
 ```
 
-_See code: [src/commands/task.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.1/src/commands/task.ts)_
-
+_See code: [src/commands/task.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.2/src/commands/task.ts)_
 <!-- commandsstop -->
