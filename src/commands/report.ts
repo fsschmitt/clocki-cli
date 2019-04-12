@@ -5,7 +5,7 @@ import {DayReport} from '../utils/db'
 import {getDayReport, getWeekReport} from '../utils/report'
 
 export default class Report extends Command {
-  static description = 'describe the command here'
+  static description = 'Generates a report (day or week) with all tasks done'
 
   static flags = {
     help: flags.help({char: 'h'}),

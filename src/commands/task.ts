@@ -6,7 +6,7 @@ import {addTask, cleanTasks, removeLastTask} from '../utils/task'
 
 export default class Task extends Command {
   static aliases = ['work']
-  static description = 'Add a work task'
+  static description = 'Add a work task to the day report'
 
   static flags = {
     help: flags.help({char: 'h'}),
