@@ -10,7 +10,7 @@ describe('task', () => {
     .command(['task', 'Test Task 1'])
     .command(['task', 'Test Task 2'])
     .command(['report'])
-    .it('runs task', async ctx => {
+    .it('runs task', ctx => {
       expect(ctx.stdout).to.contain('Adding new task: Test Task 1') &&
         expect(ctx.stdout).to.contain('Adding new task: Test Task 2') &&
         expect(ctx.stdout).to.contain('- Test Task 1') &&
@@ -21,7 +21,7 @@ describe('task', () => {
     .stdout()
     .command(['task', '--remove-last'])
     .command(['report'])
-    .it('runs task --remove-last', async ctx => {
+    .it('runs task --remove-last', ctx => {
       expect(ctx.stdout).to.contain('Removing last task of the day') &&
         expect(ctx.stdout).to.contain('- Test Task 1') &&
         expect(ctx.stdout).to.not.contain('- Test Task 2')
@@ -30,7 +30,7 @@ describe('task', () => {
   test
     .stdout()
     .command(['task', 'Test Task 2'])
-    .it('adds task 2', async ctx => {
+    .it('adds task 2', ctx => {
       expect(ctx.stdout).to.contain('Adding new task: Test Task 2')
     })
 })
