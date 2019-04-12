@@ -26,7 +26,7 @@ export default class Report extends Command {
     if (!flags.week) {
       const exists = await DayReport.find({date}).value()
       if (exists) {
-        const report = await getDayReport(date)
+        const report = await getDayReport(date, flags.verbose)
         this.log(report)
         return 0
       } else {
