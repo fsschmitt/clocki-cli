@@ -22,7 +22,7 @@ $ npm install -g clocki
 $ clocki COMMAND
 running command...
 $ clocki (-v|--version|version)
-clocki/0.0.4 darwin-x64 node-v10.10.0
+clocki/0.0.5 darwin-x64 node-v10.10.0
 $ clocki --help [COMMAND]
 USAGE
   $ clocki COMMAND
@@ -74,7 +74,7 @@ ALIASES
   $ clocki hello
 ```
 
-_See code: [src/commands/in.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.4/src/commands/in.ts)_
+_See code: [src/commands/in.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.5/src/commands/in.ts)_
 
 ## `clocki out`
 
@@ -94,11 +94,11 @@ ALIASES
   $ clocki goodbye
 ```
 
-_See code: [src/commands/out.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.4/src/commands/out.ts)_
+_See code: [src/commands/out.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.5/src/commands/out.ts)_
 
 ## `clocki report`
 
-describe the command here
+Generates a report (day or week) with all tasks done
 
 ```
 USAGE
@@ -111,11 +111,11 @@ OPTIONS
   -w, --week       Weekly report
 ```
 
-_See code: [src/commands/report.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.4/src/commands/report.ts)_
+_See code: [src/commands/report.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.5/src/commands/report.ts)_
 
 ## `clocki task [TASK]`
 
-Add a work task
+Add a work task to the day report
 
 ```
 USAGE
@@ -131,5 +131,5 @@ ALIASES
   $ clocki work
 ```
 
-_See code: [src/commands/task.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.4/src/commands/task.ts)_
+_See code: [src/commands/task.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.5/src/commands/task.ts)_
 <!-- commandsstop -->

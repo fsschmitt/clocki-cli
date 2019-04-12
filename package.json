@@ -1,7 +1,7 @@
 {
   "name": "clocki",
   "description": "A simple tool to track in-and-out time and taks done during the day",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "fsschmitt @fsschmitt",
   "bin": {
     "clocki": "./bin/run"
