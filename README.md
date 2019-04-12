@@ -8,15 +8,14 @@ A simple tool to track in-and-out time and taks done during the day
 [![License](https://img.shields.io/npm/l/clocki.svg)](https://github.com/fsschmitt/clocki-cli/blob/master/package.json)
 
 <!-- toc -->
-
-- [Usage](#usage)
-- [Commands](#commands)
-  <!-- tocstop -->
+* [ClocKI](#clocki)
+* [Usage](#usage)
+* [Commands](#commands)
+<!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g clocki
 $ clocki COMMAND
@@ -28,19 +27,16 @@ USAGE
   $ clocki COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`clocki hello [FILE]`](#clocki-hello-file)
-- [`clocki help [COMMAND]`](#clocki-help-command)
-- [`clocki in`](#clocki-in)
-- [`clocki out`](#clocki-out)
-- [`clocki report`](#clocki-report)
-- [`clocki task [TASK]`](#clocki-task-task)
+* [`clocki help [COMMAND]`](#clocki-help-command)
+* [`clocki in`](#clocki-in)
+* [`clocki out`](#clocki-out)
+* [`clocki report`](#clocki-report)
+* [`clocki task [TASK]`](#clocki-task-task)
 
 ## `clocki help [COMMAND]`
 
@@ -71,6 +67,10 @@ OPTIONS
   -d, --date=date  date
   -h, --help       show CLI help
   -t, --time=time  time
+
+ALIASES
+  $ clocki hi
+  $ clocki hello
 ```
 
 _See code: [src/commands/in.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.1/src/commands/in.ts)_
@@ -87,22 +87,27 @@ OPTIONS
   -d, --date=date  date
   -h, --help       show CLI help
   -t, --time=time  time
+
+ALIASES
+  $ clocki bye
+  $ clocki goodbye
 ```
 
 _See code: [src/commands/out.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.1/src/commands/out.ts)_
 
-## `clocki report [FILE]`
+## `clocki report`
 
 describe the command here
 
 ```
 USAGE
-  $ clocki report [FILE]
+  $ clocki report
 
 OPTIONS
-  -f, --force
+  -d, --date=date  Specify date of report
   -h, --help       show CLI help
-  -n, --name=name  name to print
+  -v, --verbose    Include all information
+  -w, --week       Weekly report
 ```
 
 _See code: [src/commands/report.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.1/src/commands/report.ts)_
@@ -120,8 +125,10 @@ OPTIONS
   -d, --date=date    date
   -h, --help         show CLI help
   -r, --remove-last
+
+ALIASES
+  $ clocki work
 ```
 
 _See code: [src/commands/task.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.1/src/commands/task.ts)_
-
 <!-- commandsstop -->
