@@ -6,16 +6,19 @@ A simple tool to track in-and-out time and taks done during the day
 [![Version](https://img.shields.io/npm/v/clocki.svg)](https://npmjs.org/package/clocki)
 [![Downloads/week](https://img.shields.io/npm/dw/clocki.svg)](https://npmjs.org/package/clocki)
 [![License](https://img.shields.io/npm/l/clocki.svg)](https://github.com/fsschmitt/clocki-cli/blob/master/package.json)
+[![Build Status](https://travis-ci.org/fsschmitt/clocki-cli.svg?branch=master)](https://travis-ci.org/fsschmitt/clocki-cli)
 
 <!-- toc -->
-* [ClocKI](#clocki)
-* [Usage](#usage)
-* [Commands](#commands)
-<!-- tocstop -->
+
+- [ClocKI](#clocki)
+- [Usage](#usage)
+- [Commands](#commands)
+  <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g clocki
 $ clocki COMMAND
@@ -27,16 +30,18 @@ USAGE
   $ clocki COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`clocki help [COMMAND]`](#clocki-help-command)
-* [`clocki in`](#clocki-in)
-* [`clocki out`](#clocki-out)
-* [`clocki report`](#clocki-report)
-* [`clocki task [TASK]`](#clocki-task-task)
+
+- [`clocki help [COMMAND]`](#clocki-help-command)
+- [`clocki in`](#clocki-in)
+- [`clocki out`](#clocki-out)
+- [`clocki report`](#clocki-report)
+- [`clocki task [TASK]`](#clocki-task-task)
 
 ## `clocki help [COMMAND]`
 
@@ -131,4 +136,5 @@ ALIASES
 ```
 
 _See code: [src/commands/task.ts](https://github.com/fsschmitt/clocki-cli/blob/v0.0.1/src/commands/task.ts)_
+
 <!-- commandsstop -->
