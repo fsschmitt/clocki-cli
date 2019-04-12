@@ -49,7 +49,10 @@
     "bin": "clocki",
     "plugins": [
       "@oclif/plugin-help"
-    ]
+    ],
+    "macos": {
+      "identifier": "com.fsschmitt.clocki"
+    }
   },
   "repository": "fsschmitt/clocki-cli",
   "scripts": {
