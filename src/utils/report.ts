@@ -1,35 +1,35 @@
-import { DayReport } from "./db";
-import { getDaysOfWeek } from "./date";
+import {getDaysOfWeek} from './date'
+import {DayReport} from './db'
 
 export const getDayReport = async (
   date: string,
-  verbose: boolean = false
+  verbose = false
 ): Promise<string> => {
-  const res = await DayReport.find({ date }).value();
-  let report = `[${date}]:\n`;
+  const res = await DayReport.find({date}).value()
+  let report = `[${date}]:\n`
   if (res && res.tasks && res.tasks.length > 0) {
     if (verbose) {
-      report = report.concat(`start: ${res.clock.in}\nend: ${res.clock.out}\n`);
+      report = report.concat(`start: ${res.clock.in}\nend: ${res.clock.out}\n`)
     }
     res.tasks.forEach((t: string) => {
-      report = report.concat(`\t- ${t}\n`);
-    });
+      report = report.concat(`\t- ${t}\n`)
+    })
   } else {
-    report = report.concat("\tNo information available");
+    report = report.concat('\tNo information available')
   }
-  return report;
-};
+  return report
+}
 
 export const getWeekReport = async (
   date: string,
-  verbose: boolean = false
+  verbose = false
 ): Promise<string> => {
-  const days = getDaysOfWeek(date);
+  const days = getDaysOfWeek(date)
   days.forEach(async (d: string) => {
-    let report = await getDayReport(d, verbose);
-    console.log(report);
-  });
-  return "";
-};
+    let report = await getDayReport(d, verbose)
+    console.log(report)
+  })
+  return ''
+}
 
-module.exports = { getDayReport, getWeekReport };
+module.exports = {getDayReport, getWeekReport}

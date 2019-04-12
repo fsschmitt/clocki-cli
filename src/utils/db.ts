@@ -1,15 +1,15 @@
-const low = require("lowdb");
-const FileSync = require("lowdb/adapters/FileSync");
-const adapter = new FileSync("db.json");
-export const db = low(adapter);
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+const adapter = new FileSync('db.json')
+export const db = low(adapter)
 
 db.defaults({
   dayReports: []
-}).write();
+}).write()
 
-export const DayReport = db.get("dayReports");
+export const DayReport = db.get('dayReports')
 
 module.exports = {
   db,
   DayReport
-};
+}
