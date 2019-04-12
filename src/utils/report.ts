@@ -12,7 +12,7 @@ export const getDayReport = async (
       report = report.concat(`start: ${res.clock.in}\nend: ${res.clock.out}\n`);
     }
     res.tasks.forEach((t: string) => {
-      report = report.concat(`\t-${t}\n`);
+      report = report.concat(`\t- ${t}\n`);
     });
   } else {
     report = report.concat("\tNo information available");
