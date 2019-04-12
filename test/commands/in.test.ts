@@ -1,5 +1,6 @@
 import { expect, test } from "@oclif/test";
 import { db } from "../../src/utils/db";
+import { today } from "../../src/utils/date";
 
 describe("in", () => {
   db.setState({});
@@ -7,7 +8,8 @@ describe("in", () => {
     .stdout()
     .command(["in"])
     .it("runs in", ctx => {
-      expect(ctx.stdout).to.contain("started working on");
+      expect(ctx.stdout).to.contain("started working on") &&
+        expect(ctx.stdout).to.contain(`started working on ${today()}`);
     });
 
   test
