@@ -1,7 +1,7 @@
 import { Command, flags } from "@oclif/command";
-import { clocki } from "../utils/db";
+import { DayReport } from "../utils/db";
 import { today, now } from "../utils/date";
-import { updateOut } from "../utils/clocki";
+import { updateOut } from "../utils/dayReport";
 
 export default class Out extends Command {
   static aliases = ["bye", "goodbye"];
@@ -19,7 +19,7 @@ export default class Out extends Command {
     const date = flags.date ? flags.date : today();
     const time = flags.time ? flags.time : now();
 
-    const exists = await clocki.find({ clocki: { date } }).value();
+    const exists = await DayReport.find({ date }).value();
     if (exists) {
       this.log(`You've stopped working on ${date} at ${time}...`);
       updateOut(date, time);

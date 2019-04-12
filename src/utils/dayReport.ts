@@ -1,13 +1,13 @@
-import { clocki } from "./db";
+import { DayReport } from "./db";
 
 const updateClock = async (date: string, time: string, type: string) => {
-  const res = await clocki.find({ clocki: { date } })
-    .set(`clocki.clock.${type}`, time)
+  const res = await DayReport.find({ date })
+    .set(`clock.${type}`, time)
     .write();
 };
 
-export const createclocki = async (date: string, time: string) => {
-  const clocki = {
+export const createDayReport = async (date: string, time: string) => {
+  const data = {
     date,
     clock: {
       in: time,
@@ -15,7 +15,7 @@ export const createclocki = async (date: string, time: string) => {
     },
     tasks: []
   };
-  await clocki.push({ clocki }).write();
+  await DayReport.push({ ...data }).write();
 };
 
 export const updateIn = async (date: string, time: string) => {
@@ -27,7 +27,7 @@ export const updateOut = async (date: string, time: string) => {
 };
 
 module.exports = {
-  createclocki,
+  createDayReport,
   updateIn,
   updateOut
 };

@@ -1,19 +1,17 @@
-import { clocki } from "./db";
+import { DayReport } from "./db";
 import { getDaysOfWeek } from "./date";
 
 export const getDayReport = async (
   date: string,
   verbose: boolean = false
 ): Promise<string> => {
-  const res = await clocki.find({ clocki: { date } }).value();
+  const res = await DayReport.find({ date }).value();
   let report = `[${date}]:\n`;
-  if (res && res.clocki && res.clocki.tasks && res.clocki.tasks.length > 0) {
+  if (res && res.tasks && res.tasks.length > 0) {
     if (verbose) {
-      report = report.concat(
-        `start: ${res.clocki.clock.in}\nend: ${res.clocki.clock.out}\n`
-      );
+      report = report.concat(`start: ${res.clock.in}\nend: ${res.clock.out}\n`);
     }
-    res.clocki.tasks.forEach((t: string) => {
+    res.tasks.forEach((t: string) => {
       report = report.concat(`\t-${t}\n`);
     });
   } else {

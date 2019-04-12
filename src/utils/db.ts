@@ -4,12 +4,12 @@ const adapter = new FileSync("db.json");
 const db = low(adapter);
 
 db.defaults({
-  clockiEntries: []
+  dayReports: []
 }).write();
 
-export const Clocki = db.get("clockiEntries");
+export const DayReport = db.get("dayReports");
 
 module.exports = {
   db,
-  clocki
+  DayReport
 };

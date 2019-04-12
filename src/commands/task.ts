@@ -1,5 +1,5 @@
 import { Command, flags } from "@oclif/command";
-import { clocki } from "../utils/db";
+import { DayReport } from "../utils/db";
 import { today } from "../utils/date";
 import { addTask, cleanTasks, removeLastTask } from "../utils/task";
 
@@ -25,28 +25,27 @@ export default class Task extends Command {
     if (flags.clean) {
       this.log(`Cleaning all tasks for day: ${date}`);
       cleanTasks(date);
-      return;
+      return 0;
     }
 
     if (flags["remove-last"]) {
       this.log(`Removing last task of the day: ${date}`);
       removeLastTask(date);
-      return;
+      return 0;
     }
 
     if (!args.task) {
       this.error("Please specify a task to add.");
-      return;
+      return 0;
     }
 
-    const exists = await clocki.find({ clocki: { date } }).value();
+    const exists = await DayReport.find({ date }).value();
     if (exists) {
       this.log(`Adding new task: ${args.task}`);
       addTask(date, args.task);
     } else {
-      this.error(
-        "In order to add a task to this day, you must first clock in."
-      );
+      this.error(`In order to add a task to ${date}, you must first clock in.`);
+      return -1;
     }
   }
 }

@@ -1,7 +1,7 @@
 import { Command, flags } from "@oclif/command";
 import { today } from "../utils/date";
 import { getDayReport, getWeekReport } from "../utils/report";
-import { clocki } from "../utils/db";
+import { DayReport } from "../utils/db";
 
 export default class Report extends Command {
   static description = "describe the command here";
@@ -23,7 +23,7 @@ export default class Report extends Command {
     const date = flags.date ? flags.date : today();
 
     if (!flags.week) {
-      const exists = await clocki.find({ clocki: { date } }).value();
+      const exists = await DayReport.find({ date }).value();
       if (exists) {
         const report = await getDayReport(date);
         this.log(report);

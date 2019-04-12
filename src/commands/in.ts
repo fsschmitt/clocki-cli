@@ -1,7 +1,7 @@
 import { Command, flags } from "@oclif/command";
-import { clocki } from "../utils/db";
+import { DayReport } from "../utils/db";
 import { today, now } from "../utils/date";
-import { createclocki, updateIn } from "../utils/clocki";
+import { createDayReport, updateIn } from "../utils/dayReport";
 
 export default class In extends Command {
   static aliases = ["hi", "hello"];
@@ -19,12 +19,12 @@ export default class In extends Command {
     const date = flags.date ? flags.date : today();
     const time = flags.time ? flags.time : now();
 
-    const exists = await clocki.find({ clocki: { date } }).value();
+    const exists = await DayReport.find({ date }).value();
     if (exists) {
       this.log("Entry already exists, updating...");
       updateIn(date, time);
     } else {
-      createclocki(date, time);
+      createDayReport(date, time);
     }
     this.log(`You've started working on ${date} at ${time}...`);
   }

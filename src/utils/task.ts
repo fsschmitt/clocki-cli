@@ -1,8 +1,8 @@
-import { clocki } from "./db";
+import { DayReport } from "./db";
 
 export const addTask = async (date: string, task: string) => {
-  const res = await clocki.find({ clocki: { date } })
-    .update(`clocki.tasks`, (t: string[]) => {
+  const res = await DayReport.find({ date })
+    .update(`tasks`, (t: string[]) => {
       t.push(task);
       return t;
     })
@@ -10,14 +10,14 @@ export const addTask = async (date: string, task: string) => {
 };
 
 export const cleanTasks = async (date: string) => {
-  const res = await clocki.find({ clocki: { date } })
-    .set("clocki.tasks", [])
+  const res = await DayReport.find({ date })
+    .set("tasks", [])
     .write();
 };
 
 export const removeLastTask = async (date: string) => {
-  const res = await clocki.find({ clocki: { date } })
-    .update(`clocki.tasks`, (t: string[]) => {
+  const res = await DayReport.find({ date })
+    .update(`tasks`, (t: string[]) => {
       t.pop();
       return t;
     })
